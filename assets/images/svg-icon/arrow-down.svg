@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="5" height="12" viewBox="0 0 5 12">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_2" data-name="Path 2" d="M0,0H5V5H0Z" transform="translate(972 266)" fill="#fff"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Path_1" data-name="Path 1" d="M0,0H5V5H0Z" transform="translate(996 251)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_4" data-name="Mask Group 4" transform="translate(-972 -259)" clip-path="url(#clip-path)">
+    <path id="arrow-up" d="M2,4.5a.5.5,0,0,0,1,0V1.707L4.146,2.854a.5.5,0,1,0,.707-.707l-2-2a.5.5,0,0,0-.707,0l-2,2a.5.5,0,0,0,.707.707L2,1.707Zm1,3a.5.5,0,0,0-1,0v2.793L.854,9.147a.5.5,0,0,0-.707.707l2,2a.5.5,0,0,0,.707,0l2-2a.5.5,0,0,0-.707-.707L3,10.293Z" transform="translate(972 259)" fill="#02a0e0" fill-rule="evenodd"/>
+  </g>
+  <g id="Mask_Group_3" data-name="Mask Group 3" transform="translate(-996 -251)" clip-path="url(#clip-path-2)">
+    <path id="arrow-up-2" data-name="arrow-up" d="M2,4.5a.5.5,0,0,0,1,0V1.707L4.146,2.854a.5.5,0,1,0,.707-.707l-2-2a.5.5,0,0,0-.707,0l-2,2a.5.5,0,0,0,.707.707L2,1.707Zm1,3a.5.5,0,0,0-1,0v2.793L.854,9.147a.5.5,0,0,0-.707.707l2,2a.5.5,0,0,0,.707,0l2-2a.5.5,0,0,0-.707-.707L3,10.293Z" transform="translate(996 251)" fill="#808191" fill-rule="evenodd"/>
+  </g>
+</svg>

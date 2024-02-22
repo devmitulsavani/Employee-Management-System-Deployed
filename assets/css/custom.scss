@@ -1,0 +1,210 @@
+.tippy-tooltip.custom-theme {
+	$tooltipBg: #34414f;
+ 	background-color: $tooltipBg;
+	color: #fff;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+	z-index: 99999;
+	position: relative;
+	font-size: 12px;
+	&[data-placement^='top'] .tippy-arrow {
+		border-top-color: $tooltipBg;
+	}
+	&[data-placement^='bottom'] .tippy-arrow {
+		border-bottom-color: $tooltipBg;
+	}
+	&[data-placement^='left'] .tippy-arrow {
+		border-left-color: $tooltipBg;
+	}
+	&[data-placement^='right'] .tippy-arrow {
+		border-right-color: $tooltipBg;
+	}
+}
+
+
+html,body {
+  // background-image:url(http://theartmad.com/wp-content/uploads/Dark-Grey-Texture-Wallpaper-5.jpg);
+  // background-size:cover;
+  // background-position:top center;
+  &.modal-active {overflow: hidden;}
+}
+
+#modal-container {position:fixed;display:table;height:100%;width:100%;top:0;left:0;transform:scale(0);z-index:999;
+	&.two {transform:scale(1);
+    .modal-background {background:rgba(0,0,0,.0);animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      .modal {opacity:0;animation: scaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;}
+    }
+    + .popcontent {animation: scaleBack .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;}
+    &.out {animation: quickScaleDown 0s .5s linear forwards;
+      .modal-background {animation: fadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        .modal {animation: scaleDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;}
+      }
+      + .popcontent {animation: scaleForward .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;}
+    }
+  }
+  .modal-background {display:table-cell;background:rgba(0,0,0,.8);text-align:center;vertical-align:middle;
+		.modal {}
+	}
+}
+@keyframes fadeIn {
+  0% {background:rgba(0,0,0,.0);}
+	100% {background:rgba(0,0,0,.2);}
+}
+@keyframes fadeOut {
+  0% {background:rgba(0,0,0,.2);}
+	100% {background:rgba(0,0,0,.0);}
+}
+@keyframes scaleUp {
+  0% {transform:scale(.8) translateY(1000px);opacity:0;}
+  100% {transform:scale(1) translateY(0px);opacity:1;}
+}
+@keyframes scaleDown {
+  0% {transform:scale(1) translateY(0px);opacity:1;}
+  100% {transform:scale(.8) translateY(1000px);opacity:0;}
+}
+@keyframes scaleBack {
+  0% {
+		// transform:scale(1);
+		filter: blur(0px);}
+	100% {
+		// transform:scale(.85);
+		filter: blur(5px);}
+}
+@keyframes scaleForward {
+  0% {
+		// transform:scale(.85);
+		filter: blur(5px);}
+	100% {
+		// transform:scale(1);
+		filter: blur(0px);}
+}
+@keyframes quickScaleDown {
+  0% {transform:scale(1);}
+	99.9% {transform:scale(1);}
+  100% {transform:scale(0);}
+}
+
+#blackList {
+	.drag-drop {
+		.badge {
+			background: rgba(75, 85, 99, .2);
+			color: rgba(75, 85, 99, 1);
+		}
+	}
+}
+#toDo {
+	.drag-drop {
+		.badge {
+			background: rgba(2, 160, 224, .2);
+			color: rgba(2, 160, 224, 1);
+		}
+	}
+}
+#inProgress {
+	.drag-drop {
+		.badge {
+			background: rgba(245, 158, 11, .2);
+			color: rgba(245, 158, 11, 1);
+		}
+	}
+}
+#testing {
+	.drag-drop {
+		.badge {
+			background: rgba(16, 185, 129, .2);
+			color: rgba(16, 185, 129, 1);
+		}
+	}
+}
+
+
+
+// Drag And Drop File Upload Css
+.form {
+  width: 100%;
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border: 2px dashed silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: silver;
+    transition: .3s ease-out;
+    &:hover,
+    &.active {
+      background-color: rgba($color: #02a0e0, $alpha: 0.2);
+      color: #02a0e0;
+      border-color: #02a0e0;
+    }
+  }
+
+  &__file {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    opacity: 0;
+  }
+  
+  &__files-container {
+    // display: block;
+    width: 100%;
+    font-size: 0;
+  }
+  
+  &__image-container {
+    display: block;
+    // margin-bottom: 10px;
+    position: relative;
+    height: 100%;
+    min-height: 100px;
+    max-height: 180px;
+    box-shadow: 0 0 5px 0 rgba(118, 93, 93, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    
+    // &:not(:nth-child(2n)){
+      // margin-right: 2%;
+    // }
+    .form__image {
+      object-fit: cover;
+    }
+    
+    &:after {
+      content: "✕";
+      position: absolute;
+      // line-height: 200px;
+      font-size: 30px;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      display: flex;align-items: center;justify-content: center;
+      top: 0;
+      right: 0;
+      left: 0;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      background-color: rgba($color: #000, $alpha: 0.4);
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+    
+    &:hover {
+      &:after {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
